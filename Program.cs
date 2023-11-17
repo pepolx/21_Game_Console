@@ -2,12 +2,13 @@
 
 namespace _21_Game_Console;
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
-        Deck deck = new Deck();
-        
+        DeckBuilder decks = new DeckBuilder(2);
+        DeckBuilder.PrintDeck(decks);
+
         
 
     }

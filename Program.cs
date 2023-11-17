@@ -14,6 +14,7 @@ class Program
         {
             Console.WriteLine(card.Suit + "   " + card.Face + "    " + card.Symbol +
                               "    " + card.Value);
+            
         }        
 
     }

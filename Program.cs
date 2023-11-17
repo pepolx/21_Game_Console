@@ -6,16 +6,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        DeckOfCards deck = new DeckOfCards();
+        Deck deck = new Deck();
         
         
-        
-        foreach (var card in deck.Shuffle(deck.GetDeck()))
-        {
-            Console.WriteLine(card.Suit + "   " + card.Face + "    " + card.Symbol +
-                              "    " + card.Value);
-            
-        }        
 
     }
 }

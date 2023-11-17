@@ -1,0 +1,15 @@
+D:\RdierProjects\21_Game_Console\21_Game_Console\bin\Debug\net7.0\21_Game_Console.exe
+D:\RdierProjects\21_Game_Console\21_Game_Console\bin\Debug\net7.0\21_Game_Console.deps.json
+D:\RdierProjects\21_Game_Console\21_Game_Console\bin\Debug\net7.0\21_Game_Console.runtimeconfig.json
+D:\RdierProjects\21_Game_Console\21_Game_Console\bin\Debug\net7.0\21_Game_Console.dll
+D:\RdierProjects\21_Game_Console\21_Game_Console\bin\Debug\net7.0\21_Game_Console.pdb
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\21_Game_Console.csproj.AssemblyReference.cache
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\21_Game_Console.GeneratedMSBuildEditorConfig.editorconfig
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\21_Game_Console.AssemblyInfoInputs.cache
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\21_Game_Console.AssemblyInfo.cs
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\21_Game_Console.csproj.CoreCompileInputs.cache
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\21_Game_Console.dll
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\refint\21_Game_Console.dll
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\21_Game_Console.pdb
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\21_Game_Console.genruntimeconfig.cache
+D:\RdierProjects\21_Game_Console\21_Game_Console\obj\Debug\net7.0\ref\21_Game_Console.dll

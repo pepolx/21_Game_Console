@@ -2,5 +2,5 @@
 
 public class Dealer
 {
-    
+    private List<Card> _dealerHand;
 }

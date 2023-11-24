@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace _21_Game_Console;
+﻿namespace _21_Game_Console;
 
 public class Program
 {

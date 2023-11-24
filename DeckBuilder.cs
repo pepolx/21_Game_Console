@@ -6,7 +6,7 @@ public class DeckBuilder
     private int _decksPlaying;
     private int _numberOfCardsInDeck = 52;
 
-    private List<Card> _deckOfCards;
+    private List<Card> _deckOfCardsInGame;
 
     public DeckBuilder(int decksPlaying)
     {
@@ -52,15 +52,15 @@ public class DeckBuilder
 
     private void Initialize()
     {
-        _deckOfCards = GetDeck();
-        Shuffle(_deckOfCards);
+        _deckOfCardsInGame = GetDeck();
+        Shuffle(_deckOfCardsInGame);
 
     }
 
     public static void PrintDeck(DeckBuilder deckBuilder)
     {
         var x = 0;
-        foreach (var card in deckBuilder._deckOfCards)
+        foreach (var card in deckBuilder._deckOfCardsInGame)
         {
             Console.WriteLine($"{card.Suit}    {card.Face}    {card.Symbol}    {card.Value}");
             x++;

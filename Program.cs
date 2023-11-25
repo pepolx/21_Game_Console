@@ -12,10 +12,11 @@ public class Program
         dealer.GetStartsCards(deck);
         player.PrintDeck();
         dealer.PrintDeck();
-
         
 
-        
+
+
+
 
     }
 }

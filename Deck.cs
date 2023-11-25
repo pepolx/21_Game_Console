@@ -4,7 +4,11 @@ public class Deck
 {
 
     private int _decksPlaying;
-    private int _numberOfCardsInDeck = 52;
+    private int _numberOfCardsInOneDeck = 52;
+    private int RemainingCardsCount
+    {
+        get { return _deckOfCardsInGame.Count; }
+    }
 
     private List<Card> _deckOfCardsInGame;
 
@@ -13,6 +17,7 @@ public class Deck
         _decksPlaying = decksPlaying;
         Initialize();
     }
+    
 
     public List<Card> GetCurrentDeck()
     {
@@ -22,7 +27,7 @@ public class Deck
     private List<Card> Shuffle(List<Card> deck)
     {
         Random random = new Random();
-        int cardsInGame =  _numberOfCardsInDeck * _decksPlaying;
+        int cardsInGame =  _numberOfCardsInOneDeck * _decksPlaying;
         while(cardsInGame > 1)
         {
             cardsInGame--;
@@ -73,5 +78,24 @@ public class Deck
 
         }
     }
+
+    public int GetNumberOfCardsLeft()
+    {
+        return RemainingCardsCount;
+    }
+
+    public bool IsEnoughCardsInDeck()
+    {
+        if (RemainingCardsCount > 10)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+   
     
 }

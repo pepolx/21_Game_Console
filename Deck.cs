@@ -3,14 +3,11 @@
 public class Deck
 {
 
-    private int _decksPlaying;
-    private int _cardsPerDeck = 52;
-    private int RemainingCardsCount
-    {
-        get { return _deckOfCardsInGame.Count; }
-    }
+    private readonly int _decksPlaying;
+    private readonly int _cardsPerDeck = 52;
+    private int RemainingCardsCount => _deckOfCardsInGame.Count;
 
-    private List<Card> _deckOfCardsInGame;
+    private List<Card> _deckOfCardsInGame = null!;
 
     public Deck(int decksPlaying)
     {
@@ -24,7 +21,7 @@ public class Deck
         return _deckOfCardsInGame;
     }
 
-    private List<Card> Shuffle(List<Card> deck)
+    private void Shuffle(List<Card> deck)
     {
         Random random = new Random();
         int cardsInGame =  _cardsPerDeck * _decksPlaying;
@@ -34,15 +31,13 @@ public class Deck
             int k = random.Next(cardsInGame + 1);
             (deck[k], deck[cardsInGame]) = (deck[cardsInGame], deck[k]);
         }
-
-        return deck;
     }
 
     private List<Card> GetDeck()
     {
         List<Card> deck = new List<Card>();
-        int decks = _decksPlaying;
-        while (decks > 0)
+        int numbersOfDecks = _decksPlaying;
+        while (numbersOfDecks > 0)
         {
 
             for (int i = 1; i < 14; i++)
@@ -53,7 +48,7 @@ public class Deck
                 }
             }
 
-            decks--;
+            numbersOfDecks--;
 
         }
 
@@ -88,7 +83,5 @@ public class Deck
     {
         return RemainingCardsCount > 10;
     }
-
-   
     
 }

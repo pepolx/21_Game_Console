@@ -2,8 +2,6 @@
 
 public class CardDistribution
 {
-    private List<Card> _playerHand;
-    private List<Card> _dealerhand;
 
 
 }

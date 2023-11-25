@@ -1,6 +1,6 @@
 ﻿namespace _21_Game_Console;
 
-public class DeckBuilder
+public class Deck
 {
 
     private int _decksPlaying;
@@ -8,10 +8,15 @@ public class DeckBuilder
 
     private List<Card> _deckOfCardsInGame;
 
-    public DeckBuilder(int decksPlaying)
+    public Deck(int decksPlaying)
     {
         _decksPlaying = decksPlaying;
         Initialize();
+    }
+
+    public List<Card> GetCurrentDeck()
+    {
+        return _deckOfCardsInGame;
     }
 
     private List<Card> Shuffle(List<Card> deck)
@@ -57,10 +62,10 @@ public class DeckBuilder
 
     }
 
-    public static void PrintDeck(DeckBuilder deckBuilder)
+    public void PrintDeck()
     {
         var x = 0;
-        foreach (var card in deckBuilder._deckOfCardsInGame)
+        foreach (var card in _deckOfCardsInGame)
         {
             Console.WriteLine($"{card.Suit}    {card.Face}    {card.Symbol}    {card.Value}");
             x++;

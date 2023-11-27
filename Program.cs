@@ -16,7 +16,7 @@ public static class Program
             player.GetOneCard(deck);
             dealer.PrintHandWithValue();
             player.PrintHandWithValue();
-            Console.ReadLine();
+            Console.ReadLine(); 
 
         }
         

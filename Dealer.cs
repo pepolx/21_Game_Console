@@ -19,8 +19,17 @@ public class Dealer
         GetValueOfCards();
     }
     
+    public void GetOneCard(Deck deckOfCards)
+    {
+        List<Card> originalDeck = deckOfCards.GetCurrentDeck();
+        _dealerHand.Add(originalDeck[0]);
+        originalDeck.RemoveAt(0);
+        GetValueOfCards();
+    }
+    
     private void GetValueOfCards()
     {
+        _dealerValueOfCards = 0;
         foreach (var card in _dealerHand)
         {
             _dealerValueOfCards += card.Value;
@@ -28,7 +37,7 @@ public class Dealer
         
     }
     
-    public void PrintDeck()
+    public void PrintHandWithAllValue()
     {
         var x = 0;
         foreach (var card in _dealerHand)
@@ -38,5 +47,22 @@ public class Dealer
             Console.WriteLine(x);
 
         }
+    }
+    public void PrintHand()
+    {
+        foreach (var card in _dealerHand)
+        {
+            Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
+        }
+    }
+    
+    public void PrintHandWithValue()
+    {
+        foreach (var card in _dealerHand)
+        {
+            Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
+        }
+
+        Console.WriteLine(_dealerValueOfCards);
     }
 }

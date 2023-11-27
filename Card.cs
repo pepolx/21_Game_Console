@@ -1,7 +1,4 @@
-﻿
-
-
-using static _21_Game_Console.Suit;
+﻿using static _21_Game_Console.Suit;
 using static _21_Game_Console.Face;
 
 namespace _21_Game_Console

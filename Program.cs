@@ -7,11 +7,12 @@ public static class Program
         Deck deck = new Deck(2);
         Player player = new Player();
         Dealer dealer = new Dealer();
-        deck.PrintDeck();
+        //deck.PrintDeck();
         player.GetStartsCards(deck);
         dealer.GetStartsCards(deck);
-        player.PrintDeck();
-        dealer.PrintDeck();
+        player.GetOneCard(deck);
+        dealer.PrintHandWithValue();
+        player.PrintHandWithValue();
 
 
 

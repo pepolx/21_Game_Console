@@ -20,26 +20,47 @@ public class Player
         originalDeck.RemoveAt(1);//after removing index 0, index 2 becomes index 1
         GetValueOfCards();
     }
+    
+    public void GetOneCard(Deck deckOfCards)
+    {
+        List<Card> originalDeck = deckOfCards.GetCurrentDeck();
+        _playerHand.Add(originalDeck[0]);
+        originalDeck.RemoveAt(0);
+        GetValueOfCards();
+    }
 
     private void GetValueOfCards()
     {
+        _playerValueOfCards = 0;
         foreach (var card in _playerHand)
         {
             _playerValueOfCards += card.Value;
         }
-        
     }
     
-    public void PrintDeck()
+    public void PrintHandWithAllValue()
     {
-        var x = 0;
         foreach (var card in _playerHand)
         {
-            Console.WriteLine($"{card.Suit}    {card.Face}    {card.Symbol}    {card.Value}");
-            x++;
-            Console.WriteLine(x);
-
+            Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
         }
+    }
+    
+    public void PrintHand()
+    {
+        foreach (var card in _playerHand)
+        {
+            Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
+        }
+    }
+    
+    public void PrintHandWithValue()
+    {
+        foreach (var card in _playerHand)
+        {
+            Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
+        }
+        Console.WriteLine(_playerValueOfCards);
     }
     
 }

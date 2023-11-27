@@ -6,7 +6,7 @@ public class Deck
 
     private readonly int _decksPlaying;
     private readonly int _cardsPerDeck = 52;
-    private int RemainingCardsCount => _deckOfCardsInGame.Count;
+    public int RemainingCardsCount => _deckOfCardsInGame.Count;
 
     private List<Card> _deckOfCardsInGame = null!;
 

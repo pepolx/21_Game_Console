@@ -34,7 +34,7 @@ namespace _21_Game_Console
 
         public Suit Suit { get; }
         public Face Face { get; }
-        public int Value { get; set; }
+        public int Value { get; }
         public char Symbol { get; }
 
         public Card(Suit suit, Face face)

@@ -3,6 +3,7 @@
 public class Dealer
 {
     private List<Card> _dealerHand;
+    private int _dealerValueOfCards;
 
     public Dealer()
     {
@@ -15,6 +16,16 @@ public class Dealer
         _dealerHand.Add(originalDeck[0]);
         _dealerHand.Add(originalDeck[1]);
         originalDeck.RemoveRange(0,2);
+        GetValueOfCards();
+    }
+    
+    private void GetValueOfCards()
+    {
+        foreach (var card in _dealerHand)
+        {
+            _dealerValueOfCards += card.Value;
+        }
+        
     }
     
     public void PrintDeck()

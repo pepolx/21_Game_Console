@@ -1,5 +1,6 @@
 ﻿namespace _21_Game_Console;
 
+
 public class Deck
 {
 
@@ -54,7 +55,7 @@ public class Deck
 
         return deck;
     }
-
+    
     private void Initialize()
     {
         _deckOfCardsInGame = GetDeck();

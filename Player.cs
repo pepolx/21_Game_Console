@@ -4,7 +4,8 @@ public class Player
 {
     private List<Card> _playerHand;
     private int _playerBalance;
-    private int _playerValueOfCards;
+    public int ValueOfCards { get; private set; }
+    
     public Player()
     {
         _playerHand = new List<Card>();
@@ -21,6 +22,11 @@ public class Player
         GetValueOfCards();
     }
     
+    public void RemoveCardsFromHand()
+    {
+        _playerHand.Clear();
+    }
+    
     public void GetOneCard(Deck deckOfCards)
     {
         List<Card> originalDeck = deckOfCards.GetCurrentDeck();
@@ -31,10 +37,10 @@ public class Player
 
     private void GetValueOfCards()
     {
-        _playerValueOfCards = 0;
+        ValueOfCards = 0;
         foreach (var card in _playerHand)
         {
-            _playerValueOfCards += card.Value;
+            ValueOfCards += card.Value;
         }
     }
     
@@ -60,7 +66,7 @@ public class Player
         {
             Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
         }
-        Console.WriteLine(_playerValueOfCards);
+        Console.WriteLine(ValueOfCards);
     }
     
 }

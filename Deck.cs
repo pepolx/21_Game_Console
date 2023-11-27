@@ -34,6 +34,8 @@ public class Deck
         }
     }
 
+   
+
     private List<Card> GetDeck()
     {
         List<Card> deck = new List<Card>();

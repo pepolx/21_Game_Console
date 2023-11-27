@@ -13,9 +13,23 @@ public static class Program
             //deck.PrintDeck();
             player.GetStartsCards(deck);
             dealer.GetStartsCards(deck);
-            player.GetOneCard(deck);
+            if (player.ValueOfCards <= 16)
+            {
+                player.GetOneCard(deck);
+            }
             dealer.PrintHandWithValue();
             player.PrintHandWithValue();
+            if (dealer.ValueOfCards > player.ValueOfCards)
+            {
+                Console.WriteLine("Przegrywasz");
+            }
+            else
+            {
+                Console.WriteLine("Wygywasz");
+            }
+            player.RemoveCardsFromHand();
+            dealer.RemoveCardsFromHand();
+            
             Console.ReadLine(); 
 
         }

@@ -3,7 +3,7 @@
 public class Dealer
 {
     private List<Card> _dealerHand;
-    private int DealerValueOfCards { get; set; }
+    public int ValueOfCards { get; private set; }
 
     public Dealer()
     {
@@ -27,12 +27,17 @@ public class Dealer
         GetValueOfCards();
     }
     
+    public void RemoveCardsFromHand()
+    {
+        _dealerHand.Clear();
+    }
+    
     private void GetValueOfCards()
     {
-        DealerValueOfCards = 0;
+        ValueOfCards = 0;
         foreach (var card in _dealerHand)
         {
-            DealerValueOfCards += card.Value;
+            ValueOfCards += card.Value;
         }
         
     }
@@ -63,6 +68,6 @@ public class Dealer
             Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
         }
 
-        Console.WriteLine(DealerValueOfCards);
+        Console.WriteLine(ValueOfCards);
     }
 }

@@ -8,25 +8,24 @@ public static class Program
         Game game = new Game();
         Player player = new Player();
         Dealer dealer = new Dealer();
+        ConsoleInterface UI = new ConsoleInterface(dealer, player, deck);
         while (game.IsEnoughCardsInDeck(deck))
         {
             //deck.PrintDeck();
             player.GetStartsCards(deck);
             dealer.GetStartsCards(deck);
-            if (player.ValueOfCards <= 16)
-            {
-                player.GetOneCard(deck);
-            }
+
             dealer.PrintHandWithValue();
             player.PrintHandWithValue();
-            if (dealer.ValueOfCards > player.ValueOfCards)
+           UI.GetOneCard();
+
+            if (dealer.ValueOfCards < 17)
             {
-                Console.WriteLine("Przegrywasz");
+                dealer.GetOneCard(deck);
             }
-            else
-            {
-                Console.WriteLine("Wygywasz");
-            }
+            dealer.PrintHandWithValue();
+            
+            UI.Result();
             player.RemoveCardsFromHand();
             dealer.RemoveCardsFromHand();
             

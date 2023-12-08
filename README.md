@@ -2,15 +2,15 @@
 
 ## Overview
 
-Welcome to the Console Game Project - 21! This is a console-based card game where the goal is to get as close to 21 points as possible without exceeding it. The basic structure of the game has been implemented, including the game logic and card handling. However, the user interface (UI) is a work in progress, and additional functionality related to placing bets needs to be implemented. It was a exercise for me to get into OOP and structurization.
+Welcome to the Console Game Project - 21! This simple console-based card game is designed to exercise code structuring, naming conventions, and provide a foundation for future enhancements. While the current version may not be fully functional for gameplay, it is structured in a way that allows for easy modification and expansion.
 
 ## Features
 
-- **Game Logic**: The core game logic, including dealing cards, shuffling, and determining the winner, has been implemented.
+- **Modular Code Structure**: The project is organized into classes and methods, promoting code modularity and readability.
+  
+- **Namespace Organization**: Utilizes namespaces to logically group related classes, enhancing code organization.
 
-- **Card Handling**: The game includes a decks of cards with appropriate shuffling and dealing mechanisms.
-
-- **Basic UI Structure**: The UI has been started but needs further development to enhance the user experience.
+- **Card Handling**: Implements basic card handling, including card representation and deck manipulation.
 
 ## Getting Started
 
@@ -19,25 +19,73 @@ Follow these steps to get the project up and running on your local machine:
 1. **Clone the Repository**:
 
     ```bash
-    git clone https://github.com/pepolx/21_Game_Console.git
-    cd 21_Game_Console
+    git clone https://github.com/pepolx/21_Console_Game.git
+    cd 21_Console_Game
     ```
 
-    Make sure you have .NET installed on your machine.
+    Ensure that .NET is installed on your machine.
 
-## To-Do
+## Code Highlights
 
-The following tasks need to be completed to improve the project:
+### Deck Class
 
-1. **Complete UI Development**: Enhance the user interface to provide a more engaging and interactive experience.
+The `Deck` class handles the creation, shuffling, and management of the game deck.
 
-2. **Implement Betting Functionality**: Develop the functionality for players to place bets, adding an extra layer of strategy to the game.
+```csharp
+public class Deck
+{
+    private readonly int _decksPlaying;
+    private readonly int _cardsPerDeck = 52;
+    private List<Card> _deckOfCardsInGame = null!;
+    // ... (other methods and properties)
+}
+```
+
+### Player Class
+
+The `Player` class manages the player's hand, card values, and provides methods for interacting with the deck.
+
+```csharp
+public class Player
+{
+    private List<Card> _playerHand;
+    private int _playerBalance;
+    public int ValueOfCards { get; private set; }
+    // ... (other methods and properties)
+}
+```
+
+### Dealer Class
+
+The `Dealer` class represents the dealer in the game, handling the dealer's hand and card values.
+
+```csharp
+Copy code
+public class Dealer
+{
+    private List<Card> _dealerHand;
+    public int ValueOfCards { get; private set; }
+    // ... (other methods and properties)
+}
+```
+
+## Suggestions for Improvement
+
+**Encapsulation:** Consider making private fields in classes truly private and utilize properties for better encapsulation.
+
+**Error Handling:** Implement error handling mechanisms, especially when dealing with external input or deck interactions.
+
+**Comments and Documentation:** Add comments to clarify complex algorithms, and provide documentation for classes and methods.
+
+**User Interface Enhancement:** Continue improving the user interface for a more engaging experience.
 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. //WIP
+This project is licensed under the MIT License - see the LICENSE file for details. //WIP
 
-## Acknowledgments
+
 
 Feel free to reach out if you have any questions or suggestions. Happy coding!
+
+

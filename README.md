@@ -7,7 +7,7 @@ Welcome to the Console Game Project - 21! This simple console-based card game is
 ## Features
 
 - **Modular Code Structure**: The project is organized into classes and methods, promoting code modularity and readability.
-- - **Console-Based Interface:** Simple and intuitive command-line interactions for gameplay.
+- **Console-Based Interface:** Simple and intuitive command-line interactions for gameplay.
 - **Computer Dealer:** Play against an automated dealer that follows the standard rules of the 21 game.
 - **Card Handling**: Implements basic card handling, including card representation and deck manipulation.
 

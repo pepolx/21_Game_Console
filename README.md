@@ -7,10 +7,17 @@ Welcome to the Console Game Project - 21! This simple console-based card game is
 ## Features
 
 - **Modular Code Structure**: The project is organized into classes and methods, promoting code modularity and readability.
-  
-- **Namespace Organization**: Utilizes namespaces to logically group related classes, enhancing code organization.
-
+- - **Console-Based Interface:** Simple and intuitive command-line interactions for gameplay.
+- **Computer Dealer:** Play against an automated dealer that follows the standard rules of the 21 game.
 - **Card Handling**: Implements basic card handling, including card representation and deck manipulation.
+
+## Purpose
+
+This project serves as a learning journey to enhance my understanding of console applications in C#. It aims to demonstrate:
+- Proficiency in fundamental C# concepts and control structures.
+- Effective use of object-oriented programming (OOP) principles.
+- The ability to design and implement game logic in a console environment.
+
 
 ## Getting Started
 
@@ -71,18 +78,19 @@ public class Dealer
 
 ## Suggestions for Improvement
 
-**Encapsulation:** Consider making private fields in classes truly private and utilize properties for better encapsulation.
-
-**Error Handling:** Implement error handling mechanisms, especially when dealing with external input or deck interactions.
-
-**Comments and Documentation:** Add comments to clarify complex algorithms, and provide documentation for classes and methods.
-
 **User Interface Enhancement:** Continue improving the user interface for a more engaging experience.
+- **Multiplayer Support:** Adding the capability for multiple human players to play against the dealer.
+- **Enhanced Strategy:** Incorporating more advanced dealer strategies and player choices.
+- **Score History:** Implementing a feature to track and display the score history of the player over multiple rounds.
+
+## Learning Outcomes
+
+Through the development of the 21 Game Console, I aim to solidify my skills in:
+- Console application development with C#.
+- Implementing clean and maintainable code with proper class structures.
+- Managing the project lifecycle and version control with git and GitHub.
 
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. //WIP
 
 
 

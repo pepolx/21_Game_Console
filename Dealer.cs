@@ -2,14 +2,9 @@
 
 public class Dealer
 {
-    private List<Card> _dealerHand;
+    private List<Card> _dealerHand = new();
     public int ValueOfCards { get; private set; }
 
-    public Dealer()
-    {
-        _dealerHand = new List<Card>();
-    }
-    
     public void GetStartsCards(Deck deckOfCards)
     {
         List<Card> originalDeck = deckOfCards.GetCurrentDeck();
@@ -60,12 +55,17 @@ public class Dealer
             Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
         }
     }
+
+    public List<Card> Hand()
+    {
+        return _dealerHand;
+    }
     
     public void PrintHandWithValue()
     {
         foreach (var card in _dealerHand)
         {
-            Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
+            Console.WriteLine($"Diler:{card.Face}    {card.Symbol}    {card.Value}");
         }
 
         Console.WriteLine(ValueOfCards);

@@ -35,7 +35,7 @@ public class Player
         GetValueOfCards();
     }
 
-    private void GetValueOfCards()
+    public void GetValueOfCards()
     {
         ValueOfCards = 0;
         foreach (var card in _playerHand)
@@ -58,6 +58,11 @@ public class Player
         {
             Console.WriteLine($"{card.Face}    {card.Symbol}    {card.Value}");
         }
+    }
+    
+    public List<Card> Hand()
+    {
+        return _playerHand;
     }
     
     public void PrintHandWithValue()

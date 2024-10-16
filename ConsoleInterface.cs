@@ -1,4 +1,6 @@
-﻿namespace _21_Game_Console;
+﻿using System.Collections;
+
+namespace _21_Game_Console;
 
 public class ConsoleInterface
 {
@@ -32,11 +34,22 @@ public class ConsoleInterface
     public void GetOneCard()
     {
         Console.WriteLine("Jesli chcesz dobrac karte napisz 'g'");
-        while (Console.ReadLine() == "g")
+        while (Console.ReadLine() == "g" && _player.ValueOfCards < 21)
         {
             _player.GetOneCard(_deck);
             _player.PrintHandWithValue();
+            
         }
         
+    }
+    
+    public void PrintHandWithValue(List<Card> hand)
+    {
+        foreach (var card in hand)
+        {
+            Console.WriteLine($"Diler:{card.Face}    {card.Symbol}    {card.Value}");
+        }
+
+        Console.WriteLine(hand.Count);
     }
 }

@@ -4,20 +4,20 @@ public static class Program
 {
     private static void Main(string[] args)
     {
-        Deck deck = new Deck(2);
-        Game game = new Game();
-        Player player = new Player();
-        Dealer dealer = new Dealer();
-        ConsoleInterface UI = new ConsoleInterface(dealer, player, deck);
+        var deck = new Deck(2);
+        var player = new Player();
+        var dealer = new Dealer();
+        var ui = new ConsoleInterface(dealer, player, deck);
+        var game = new Game(dealer, player, deck);
         while (game.IsEnoughCardsInDeck(deck))
         {
-            //deck.PrintDeck();
+            //deck.PrintDeck();      
             player.GetStartsCards(deck);
             dealer.GetStartsCards(deck);
 
-            dealer.PrintHandWithValue();
-            player.PrintHandWithValue();
-           UI.GetOneCard();
+            ui.PrintHandWithValue(dealer.Hand());
+            ui.PrintHandWithValue(player.Hand());
+            game.GetOneCard();
 
             if (dealer.ValueOfCards < 17)
             {
@@ -25,11 +25,12 @@ public static class Program
             }
             dealer.PrintHandWithValue();
             
-            UI.Result();
+            ui.Result();
             player.RemoveCardsFromHand();
             dealer.RemoveCardsFromHand();
             
             Console.ReadLine(); 
+            Console.Clear();
 
         }
         

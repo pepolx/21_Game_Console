@@ -1,12 +1,10 @@
-﻿using System.Collections;
-
 namespace _21_Game_Console;
 
 public class ConsoleInterface
 {
-    private Dealer _dealer;
-    private Player _player;
-    private  Deck _deck;
+    private readonly Dealer _dealer;
+    private readonly Player _player;
+    private readonly Deck _deck;
 
     public ConsoleInterface(Dealer dealer, Player player, Deck deck)
     {
@@ -14,14 +12,15 @@ public class ConsoleInterface
         _player = player;
         _deck = deck;
     }
+
     public void Result()
     {
-        if (_dealer.ValueOfCards > _player.ValueOfCards && _dealer.ValueOfCards < 22 
+        if (_dealer.ValueOfCards > _player.ValueOfCards && _dealer.ValueOfCards < 22
             || _player.ValueOfCards > 21)
         {
             Console.WriteLine("Przegrywasz");
         }
-        else if(_dealer.ValueOfCards == _player.ValueOfCards)
+        else if (_dealer.ValueOfCards == _player.ValueOfCards)
         {
             Console.WriteLine("Remis");
         }
@@ -38,18 +37,17 @@ public class ConsoleInterface
         {
             _player.GetOneCard(_deck);
             _player.PrintHandWithValue();
-            
         }
-        
     }
-    
-    public void PrintHandWithValue(List<Card> hand)
+
+    public void PrintHandWithValue(List<Card> hand, string owner)
     {
         foreach (var card in hand)
         {
-            Console.WriteLine($"Diler:{card.Face}    {card.Symbol}    {card.Value}");
+            Console.WriteLine($"{owner}: {card.Face}    {card.Symbol}    {card.Value}");
         }
 
-        Console.WriteLine(hand.Count);
+        var handValue = HandValueCalculator.CalculateValue(hand);
+        Console.WriteLine($"Wartość ręki ({owner}): {handValue}");
     }
 }

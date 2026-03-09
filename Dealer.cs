@@ -1,8 +1,8 @@
-﻿namespace _21_Game_Console;
+namespace _21_Game_Console;
 
 public class Dealer
 {
-    private List<Card> _dealerHand = new();
+    private readonly List<Card> _dealerHand = new();
     public int ValueOfCards { get; private set; }
 
     public void GetStartsCards(Deck deckOfCards)
@@ -10,10 +10,10 @@ public class Dealer
         List<Card> originalDeck = deckOfCards.GetCurrentDeck();
         _dealerHand.Add(originalDeck[0]);
         _dealerHand.Add(originalDeck[1]);
-        originalDeck.RemoveRange(0,2);
+        originalDeck.RemoveRange(0, 2);
         GetValueOfCards();
     }
-    
+
     public void GetOneCard(Deck deckOfCards)
     {
         List<Card> originalDeck = deckOfCards.GetCurrentDeck();
@@ -21,33 +21,25 @@ public class Dealer
         originalDeck.RemoveAt(0);
         GetValueOfCards();
     }
-    
+
     public void RemoveCardsFromHand()
     {
         _dealerHand.Clear();
     }
-    
+
     private void GetValueOfCards()
     {
-        ValueOfCards = 0;
-        foreach (var card in _dealerHand)
-        {
-            ValueOfCards += card.Value;
-        }
-        
+        ValueOfCards = HandValueCalculator.CalculateValue(_dealerHand);
     }
-    
+
     public void PrintHandWithAllValue()
     {
-        var x = 0;
         foreach (var card in _dealerHand)
         {
             Console.WriteLine($"{card.Suit}    {card.Face}    {card.Symbol}    {card.Value}");
-            x++;
-            Console.WriteLine(x);
-
         }
     }
+
     public void PrintHand()
     {
         foreach (var card in _dealerHand)
@@ -60,14 +52,14 @@ public class Dealer
     {
         return _dealerHand;
     }
-    
+
     public void PrintHandWithValue()
     {
         foreach (var card in _dealerHand)
         {
-            Console.WriteLine($"Diler:{card.Face}    {card.Symbol}    {card.Value}");
+            Console.WriteLine($"Diler: {card.Face}    {card.Symbol}    {card.Value}");
         }
 
-        Console.WriteLine(ValueOfCards);
+        Console.WriteLine($"Wartość ręki dilera: {ValueOfCards}");
     }
 }
